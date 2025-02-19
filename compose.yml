@@ -1,0 +1,32 @@
+services:
+  caddy:
+    image: caddy:2.9.1-alpine
+    restart: unless-stopped
+    env_file:
+      - .env
+    ports:
+      - "80:80"
+      - "443:443"
+      - "443:443/udp"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - www_data:/srv
+      - caddy_data:/data
+      - caddy_config:/config
+
+  nrtk:
+    image: michaelageev/nrtk-sync:latest
+    restart: unless-stopped
+    env_file:
+      - .env
+    volumes:
+      - www_data:/app/www
+      - nrtk_data:/app/.nrtk
+    depends_on: 
+        - caddy
+
+volumes:
+  www_data:
+  nrtk_data:
+  caddy_data:
+  caddy_config:

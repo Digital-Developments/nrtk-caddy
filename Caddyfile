@@ -1,0 +1,26 @@
+{$HOST_NAMES:localhost} {
+        
+        log {
+                output stderr
+                level DEBUG
+                format console
+        }
+
+        encode gzip
+        root /srv
+
+        handle / {
+                try_files {path} /index =404
+                file_server
+        }
+
+        handle /* {
+                try_files {path} /{path} =404
+                file_server
+        }
+
+        handle_errors {
+                rewrite * /error.html
+                file_server
+        }
+}
