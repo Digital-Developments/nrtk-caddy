@@ -6,7 +6,7 @@ Caddy gracefully takes care of HTTPS and serving your stuff to the people. Newro
 
 ## Key Features
 * All-in-one solution for a self-hosted and secure website
-* Automated content synchronization ([source code](./src/main.py))
+* Automated content synchronization based on [Python](https://github.com/Digital-Developments/nrtk-client-python) or [Go](https://github.com/Digital-Developments/nrtk-client-go) clients
 * Local backups and version control (you always have a snapshot of your content)
 * SEO optimization via sitemap.xml
 * Basic error page templates
@@ -18,7 +18,7 @@ This guide assumes that you have:
 * a standalone publication on Newsroom Toolkit
 * a domain name that points to your instance public IP
 
-To run a website using this package you will need [Docker Compose](#1-install-docker-compose) and [configure](#2-set-envs) your instance. You can also change Caddy Server configuration in [Caddyfile](Caddyfile) or build your own Docker image from [sources](./src).
+To run a website using this package you will need [Docker Compose](#1-install-docker-compose) and [configure](#2-set-envs) your instance. You can also change Caddy Server configuration in [Caddyfile](Caddyfile) or build your own client image (default config goes with Python-client).
 
 
 ### 1. Install Docker Compose
