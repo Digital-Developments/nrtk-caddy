@@ -51,13 +51,5 @@ $ docker compose up -d --build
 Now it's time to check one of the `HOST_NAMES` in your browser.
 
 
-## CLI
-You can also run the sync module as a CLI-command:
-```
-$ python src/main.py
-```
-For more details please refer to [documenation](./src/README.md).
-
-
 ## License
 The project is licensed under the MIT License (see the [LICENSE](LICENSE) file).
